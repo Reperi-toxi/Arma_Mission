@@ -8,8 +8,8 @@ if (playerMoney < _cost) exitWith {
 	hint format ["Not enough money! You need $%1 (Current: $%2).", _cost, playerMoney];
 };
 
-// Find a safe spawn position 15 meters in front of the player
-private _desiredPos = player getPos [15, getDir player];
+// Find a safe spawn position 10 meters in front of the player
+private _desiredPos = player getPos [10, getDir player];
 private _safePos = _desiredPos findEmptyPosition [0, 30, "B_Soldier_F"];
 
 if (_safePos isEqualTo []) exitWith {
@@ -29,4 +29,4 @@ private _unitClassnames = [
 private _aaGroup = [_safePos, west, _unitClassnames] call BIS_fnc_spawnGroup;
 (units _aaGroup) joinSilent (group player);
 
-hint format ["NATO AA Squad spawned (-$%1)! Remaining: $%2", _cost, playerMoney];
+systemChat format ["NATO AA Squad spawned (-$%1)! Remaining: $%2", _cost, playerMoney];
