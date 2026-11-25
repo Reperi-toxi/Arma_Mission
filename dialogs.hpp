@@ -1,19 +1,30 @@
-class ABMenu
+class VehicleSpawnMenu
 {
     idd = 5001;
     movingEnable = false;
 
     class controls
     {
-        class SpawnHunterButton: RscButton
+        class SpawnOffroadButton: RscButton
         {
             idc = 1600;
-            text = "Spawn Hunter";
+            text = "Spawn Offroad - $250";
             x = 0.4 * safezoneW + safezoneX;
             y = 0.4 * safezoneH + safezoneY;
             w = 0.2 * safezoneW;
             h = 0.05 * safezoneH;
-            action = "closeDialog 0; [] execVM 'scripts\spawnVehicle.sqf';";
+            action = "closeDialog 0; [] execVM 'scripts\VehicleGround\spawnOffroad.sqf';";
+        };
+
+        class SpawnHunterButton: RscButton
+        {
+            idc = 1602;
+            text = "Spawn Hunter - $500";
+            x = 0.4 * safezoneW + safezoneX;
+            y = 0.48 * safezoneH + safezoneY;
+            w = 0.2 * safezoneW;
+            h = 0.05 * safezoneH;
+            action = "closeDialog 0; [] execVM 'scripts\VehicleGround\spawnHunter.sqf';";
         };
 
         class CloseMenuButton: RscButton
@@ -21,14 +32,15 @@ class ABMenu
             idc = 1601;
             text = "Cancel";
             x = 0.4 * safezoneW + safezoneX;
-            y = 0.48 * safezoneH + safezoneY;
+            y = 0.56 * safezoneH + safezoneY;
             w = 0.2 * safezoneW;
             h = 0.05 * safezoneH;
             action = "closeDialog 0;";
         };
     };
 };
-class MENU2 
+
+class infantrySpawnMenu 
 {
 	idd=5002;
 	class controls 
@@ -36,12 +48,12 @@ class MENU2
 		class RscButton_1600: RscButton
 		{
 			idc = 1600;
-			text = "Spawn AA squad"; //--- ToDo: Localize;
+			text = "Spawn Infantry - $100"; //--- ToDo: Localize;
 			x = 15.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 5.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 10 * GUI_GRID_W;
 			h = 2 * GUI_GRID_H;
-            action = "closeDialog 0; [] execVM 'scripts\spawnAASquad.sqf';";
+            action = "closeDialog 0; [] execVM 'scripts\squadInfantry\spawnAssaultSquad.sqf';";
 		};
 		class RscButton_1602: RscButton
 		{
@@ -77,7 +89,7 @@ class RscTitles
 				w = 0.18 * safezoneW;
 				h = 0.04 * safezoneH;
 				sizeEx = 0.045;
-				colorText[] = {0.2, 0.9, 0.2, 1}; // Green text
+				colorText[] = {0.19, 0.19, 0.19, 1}; // text color
 			};
 		};
 	};

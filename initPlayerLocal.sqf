@@ -1,16 +1,3 @@
-waitUntil { !isNull (findDisplay 46) };
-
-(findDisplay 46) displayAddEventHandler ["KeyDown", {
-    params ["_display", "_key"];
-    
-    if (_key == 35 && !dialog) then {
-        createDialog "MENU2";
-        true
-    } else {
-        false
-    };
-}];
-
 if (isNil "playerMoney") then {
 	playerMoney = 250;
 };
@@ -35,7 +22,7 @@ if (isNil "playerMoney") then {
 		sleep 0.2;
 	};
 };
-// Reward $50 whenever the player kills an enemy soldier
+
 // Reward $50 for enemy soldiers, deduct $200 for civilians (minimum $0)
 addMissionEventHandler ["EntityKilled", {
 	params ["_killed", "_killer", "_instigator"];
