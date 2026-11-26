@@ -1,5 +1,19 @@
+waitUntil { !isNull (findDisplay 46) };
+
+(findDisplay 46) displayAddEventHandler ["KeyDown", {
+	params ["_display", "_key"];
+
+	// Key 21 is DIK_Y ("Y")
+	if (_key == 21 && !dialog) then {
+		createDialog "MainMenu";
+		true
+	} else {
+		false
+	};
+}];
+
 if (isNil "playerMoney") then {
-	playerMoney = 250;
+	playerMoney = 500;
 };
 
 // Display the persistent HUD on layer 1

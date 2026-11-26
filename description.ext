@@ -1,2 +1,5 @@
 #include "defines.hpp"
 #include "dialogs.hpp"
+respawn = "BASE";
+respawnDelay = 5;           
+respawnOnStart = -1;        // Don't force a respawn screen when mission starts
